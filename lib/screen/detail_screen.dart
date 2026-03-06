@@ -166,7 +166,7 @@ class _DetailScreenState extends State<DetailScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _navButton(
-            label: "ၵွၼ်ႇၼႃႈ",
+            label: "ဢွၼ်ႇၼႃႈ",
             icon: Icons.arrow_back_ios_new_rounded,
             isDisabled: isFirst,
             onTap: () => _updateContent(_currentIndex - 1),
@@ -177,7 +177,7 @@ class _DetailScreenState extends State<DetailScreen> {
             style: _ajStyle(size: 14, color: Colors.grey),
           ),
           _navButton(
-            label: "တေႃႉတၢင်းၼႃႈ",
+            label: "တၢင်းၼႃႈ",
             icon: Icons.arrow_forward_ios_rounded,
             isDisabled: isLast,
             isNext: true,

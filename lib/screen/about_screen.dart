@@ -117,7 +117,7 @@ class AboutScreen extends StatelessWidget {
                         iconColor: const Color(0xFF24292E),
                         label: "GitHub",
                         value: "Get Source Code",
-                        onTap: () => _launchUrl("https://github.com/SaingHmineTun/TMKTaiLeConverter"),
+                        onTap: () => _launchUrl("https://github.com/SaingHmineTun/learn_shan"),
                       ),
                       _buildContactCard(
                         icon: FontAwesomeIcons.earthAsia,
