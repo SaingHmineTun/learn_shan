@@ -99,46 +99,48 @@ class _DetailScreenState extends State<DetailScreen> {
         child: SingleChildScrollView(
           key: ValueKey<String>(_currentId),
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Column(
-                  children: [
-                    Text(
-                      _definition.title,
-                      style: _ajStyle(size: 24, weight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 10),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: Colors.blueAccent.withOpacity(0.1),
+          child: SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        _definition.title,
+                        style: _ajStyle(size: 24, weight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.blueAccent.withOpacity(0.1),
+                          ),
+                        ),
+                        child: Text(
+                          _definition.description,
+                          textAlign: TextAlign.center,
+                          style: _ajStyle(size: 15, color: Colors.grey[700]),
                         ),
                       ),
-                      child: Text(
-                        _definition.description,
-                        textAlign: TextAlign.center,
-                        style: _ajStyle(size: 15, color: Colors.grey[700]),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              _buildSection("တူဝ်ယၢင်ႇတႅမ်ႈ (Spelling)", Icons.edit),
-              Wrap(
-                children: _definition.spelling
-                    .map((text) => _buildChip(text))
-                    .toList(),
-              ),
-              _buildSection("လၢႆးၸႂ်ႉတိုဝ်း (Examples)", Icons.menu_book),
-              ..._definition.usages.map(
-                (text) => _buildExampleTile(text, _definition.isPlayable),
-              ),
-            ],
+                _buildSection("တူဝ်ယၢင်ႇတႅမ်ႈ (Spelling)", Icons.edit),
+                Wrap(
+                  children: _definition.spelling
+                      .map((text) => _buildChip(text))
+                      .toList(),
+                ),
+                _buildSection("လၢႆးၸႂ်ႉတိုဝ်း (Examples)", Icons.menu_book),
+                ..._definition.usages.map(
+                  (text) => _buildExampleTile(text, _definition.isPlayable),
+                ),
+              ],
+            ),
           ),
         ),
       ),

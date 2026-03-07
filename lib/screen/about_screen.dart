@@ -32,7 +32,7 @@ class AboutScreen extends StatelessWidget {
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.white),
         title: const Text(
-          "လွင်ႈၽူႈၶူင်သၢင်ႈ", // "About Us"
+          "လွင်ႈၽူႈၶူင်ႊသၢင်ႈ", // "About Us"
           style: TextStyle(
             fontFamily: "AJ",
             fontWeight: FontWeight.bold,
