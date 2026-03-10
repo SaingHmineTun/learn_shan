@@ -62,32 +62,30 @@ class TableScreen extends StatelessWidget {
 
           // The Grid
           Expanded(
-            child: Center(
-              child: Container(
-                // Prevents the grid from becoming too wide on Ultra-Wide monitors
-                constraints: const BoxConstraints(maxWidth: 1000),
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(20),
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    // Forces items to be roughly 140px wide.
-                    // On Desktop, this adds more columns. On Mobile, it maintains ~3.
-                    maxCrossAxisExtent: 100,
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 16,
-                    childAspectRatio:
-                        1.0, // Ensures items stay perfectly square
-                  ),
-                  itemCount: words[word]?.length ?? 0,
-                  itemBuilder: (context, index) {
-                    final str = words[word]![index];
-                    return MaoGridItem(
-                      text: str,
-                      onPressed: (id) {
-                        _gotoDetailScreen(context, word, id);
-                      },
-                    );
-                  },
+            child: Container(
+              alignment: Alignment.center,
+              // Prevents the grid from becoming too wide on Ultra-Wide monitors
+              constraints: const BoxConstraints(maxWidth: 1000),
+              child: GridView.builder(
+                padding: const EdgeInsets.all(20),
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  // Forces items to be roughly 140px wide.
+                  // On Desktop, this adds more columns. On Mobile, it maintains ~3.
+                  maxCrossAxisExtent: 100,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 1.0, // Ensures items stay perfectly square
                 ),
+                itemCount: words[word]?.length ?? 0,
+                itemBuilder: (context, index) {
+                  final str = words[word]![index];
+                  return MaoGridItem(
+                    text: str,
+                    onPressed: (id) {
+                      _gotoDetailScreen(context, word, id);
+                    },
+                  );
+                },
               ),
             ),
           ),

@@ -89,12 +89,9 @@ class HomeScreen extends StatelessWidget {
                 maxCrossAxisExtent: 600,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
-                mainAxisExtent:85
+                mainAxisExtent: 85,
               ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 20,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               itemCount: words.keys.length,
               itemBuilder: (context, index) {
                 final str = words.keys.elementAt(index);
