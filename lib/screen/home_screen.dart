@@ -84,10 +84,18 @@ class HomeScreen extends StatelessWidget {
 
           // Lesson List
           Expanded(
-            child: ListView.separated(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 600,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                mainAxisExtent:85
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 20,
+              ),
               itemCount: words.keys.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
                 final str = words.keys.elementAt(index);
                 return MaoListItem(
